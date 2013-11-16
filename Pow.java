@@ -1,4 +1,4 @@
-	public double powRecursive(double x, int n) {
+public double powRecursive(double x, int n) {
 		if (n == 0)
 			return 1;
 		if (n < 0) {
@@ -8,9 +8,9 @@
 		}
 		double tmp = powRecursive(x, n / 2);
 		return n % 2 == 0 ? tmp * tmp : tmp * tmp * x;
-	}
+}
 
-	public double powIterative(double x, int n) {
+public double powIterative(double x, int n) {
 		if (n == 0)
 			return 1;
 		if (n < 0) {
@@ -27,4 +27,4 @@
 			n >>= 1;
 		}
 		return product;
-	}
+}
