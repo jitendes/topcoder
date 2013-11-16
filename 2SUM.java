@@ -1,4 +1,4 @@
-    public int[] twoSumUnSorted(int[] numbers, int target) { 
+    public int[] twoSumUnsorted(int[] numbers, int target) { 
         HashMap<Integer, Integer> myMap=new HashMap<Integer, Integer>(); 
         for (int i=0;i<numbers.length;i++){ 
             myMap.put(numbers[i],i); 
