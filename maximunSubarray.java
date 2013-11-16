@@ -1,4 +1,4 @@
-public class maximunSubarray {
+public class MaximunSubarray {
     public int maxSubArray(int[] A){
         int local=0;
         int max=Integer.MIN_VALUE;
