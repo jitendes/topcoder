@@ -16,4 +16,21 @@
         return r; 
     }
     
+    public void twoSumSorted(int[] numbers, int target) { 
+        Arrays.sort(numbers);
+        int l = 0;
+        int r = numbers.length-1; //index
+        while (l<r){
+            if (numbers[l]+numbers[r]==target){
+                //to do
+                break;
+            }
+            if (numbers[l]+numbers[r]<target){
+                l++;
+            }else{
+                r--;
+            }
+        }
+    }
+    
     
