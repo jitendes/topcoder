@@ -26,5 +26,5 @@ public double powIterative(double x, int n) {
 			x *= x; // each time power of 2
 			n >>= 1;
 		}
-		return product;
+	return product;
 }
