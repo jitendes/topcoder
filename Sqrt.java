@@ -1,6 +1,6 @@
     public int sqrtLong(int x) {
         long l=0;
-        long r=x;
+        long r=x/4;
         while(l<=r){
             long mid = (l+r)/2;
             long s = mid*mid;
@@ -13,3 +13,5 @@
         }
         return l*l<=x?(int)l:(int)l-1; 
     }
+    
+    
