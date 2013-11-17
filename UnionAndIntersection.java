@@ -1,5 +1,5 @@
 public static void printUnion(int[] arr1, int[] arr2) { 
-		int i = 0, j = 0;
+	  int i = 0, j = 0;
 		while (i < arr1.length && j < arr2.length) {
 			if (arr1[i] < arr2[j]) {
 				System.out.printf(" %d ", arr1[i++]);
