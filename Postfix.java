@@ -88,14 +88,12 @@ public class Postfix {
 					stack.push(t); //push operands
 				}
 			}
-		} catch (NumberFormatException e) {
-			throw new RuntimeException("badly formed postfix expression " + e);
-		} catch (EmptyStackException ese) {
-			throw new IllegalArgumentException("illegal postfix expression " + s);
+		} catch (Exception e) {
+			throw new IllegalArgumentException("badly formed postfix expression " + s);
 		}
 		int result = Integer.parseInt(stack.pop());		
 		if (stack.size() > 0) {
-			throw new IllegalArgumentException("illegal postfix expression " + s);
+			throw new IllegalArgumentException("badly formed postfix expression " + s);
 		}		
 		return result;
 	}
@@ -104,7 +102,7 @@ public class Postfix {
 		Postfix p = new Postfix();
 		//String postfix = p.infixPostfixConvert("1 * 2*");
 		//System.out.println(postfix);
-		System.out.println(p.postFixEvaluate("* 2 3 * 5 4"));
+		System.out.println(p.postFixEvaluate(" 2 ^ * 5 4"));
 
 	}
 }
