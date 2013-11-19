@@ -8,7 +8,7 @@
  * }
  */
 public class Solution {
-//insert iterval into non-overlapping itervals
+//insert interval into non-overlapping itervals
     public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
         int i=0;
         while (i<intervals.size()){
