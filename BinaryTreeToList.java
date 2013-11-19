@@ -25,6 +25,7 @@
     }
 
 //bst to double linked list
+//http://cslibrary.stanford.edu/109/TreeListRecursion.html 
 class TreeList { 
     /* 
      helper function -- given two list nodes, join them 
@@ -68,9 +69,10 @@ class TreeList {
          
         // Do it separately in pre-order, make left a list and make right a list, then turn root to a self pointed list 
         Node aList = treeToList(root.small); 
-        Node bList = treeToList(root.large);         
+        Node bList = treeToList(root.large);       
+        //Make the single root node into a list length=1 
         root.small = root; 
-        root.large = root; //Make the single root node into a list length=1 
+        root.large = root;
          
         aList = append(aList, root); 
         aList = append(aList, bList);         
