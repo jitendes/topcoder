@@ -45,4 +45,42 @@ public class Solution {
 	        }
 	        return diff == 1;
 	    }
+//faster way
+	public int ladderLength(String start, String end,
+			HashSet<String> dict) {
+		// Note: The Solution object is instantiated only once and is reused by
+		// each test case.
+		Queue<String> q = new LinkedList<String>();
+
+		// modified bfs
+		q.add(start);
+		q.add(null);
+		int len = 1;
+		String cur = null;
+		while (q.size() != 1) {
+			cur = q.remove();
+			
+			if (cur == null) {
+				q.add(null);
+				len++;
+				continue;
+			}
+			
+			for (int i = 0; i < cur.length(); i++) {
+				char[] tmp = cur.toCharArray();
+				for (char c = 'a'; c <= 'z'; c++) {					
+					tmp[i] = c;
+					String s = new String(tmp);
+					if (s.equals(end))
+						return len + 1;
+					if (dict.contains(s)) {
+						q.add(s);
+						dict.remove(s);						
+					}					
+				}
+			}
+
+		}
+		return 0;
+	}
 }
