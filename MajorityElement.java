@@ -1,10 +1,9 @@
-// returns -1 if there is no element that is the majority element, otherwise that element
-
-// funda :: if there is a majority element in an array, say x, then it is okay to discard 
-// a part of that array that has no majority element, the remaining array will still have
-// x as the majority element
-
-// worst case complexity :  O(n)
+// Moore’s Voting Algorithm 
+// Time Complexity: O(n) 
+// Auxiliary Space : O(1) 
+// This is a two step process. 
+// 1. Get an element occurring most of the time in the array. 
+// 2. One more pass to check if the element obtained from above step is majority element.
 
 int findMajorityElement(int * arr, int size) { 
      int count = 0, i, majorityElement;
