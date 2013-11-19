@@ -35,7 +35,7 @@ class Singleton {
 	private static Singleton instance;
 
 	private Singleton() {
-		System.out.println("Singleton(): Initializing Instance");
+		
 	}
 
 	public static Singleton getInstance() {
@@ -53,6 +53,27 @@ class Singleton {
 	}
 
 	public void doSomething() {
+	}
+}
+
+
+//Early instantiation using implementation with static field.
+class Singleton
+{
+	private static Singleton instance = new Singleton();
+
+	private Singleton()
+	{
+		System.out.println("Singleton(): Initializing Instance");
+	}
+
+	public static Singleton getInstance()
+	{    
+		return instance;
+	}
+
+	public void doSomething()
+	{
 		System.out.println("doSomething(): Singleton does something!");
 	}
 }
