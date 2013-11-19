@@ -3,8 +3,6 @@ public class Solution {
 	        // Note: The Solution object is instantiated only once and is reused by each test case.
 	        Set<String> visited = new HashSet<String>();
 	        Queue<String> q = new LinkedList<String>();
-	        
-	        
 	        //bfs
 	        q.add(start);
 	        q.add(null);
@@ -32,7 +30,6 @@ public class Solution {
 	        if (oneStepAway(cur,end)) return len+1;
 	        return 0;
 	    }
-	    
 	    public boolean oneStepAway(String s, String e){
 	        if (s.length()!=e.length()) return false;
 	        int diff = 0;
@@ -52,7 +49,6 @@ public class Solution {
 		// Note: The Solution object is instantiated only once and is reused by
 		// each test case.
 		Queue<String> q = new LinkedList<String>();
-
 		// modified bfs
 		q.add(start);
 		q.add(null);
@@ -60,13 +56,11 @@ public class Solution {
 		String cur = null;
 		while (q.size() != 1) {
 			cur = q.remove();
-			
 			if (cur == null) {
 				q.add(null);
 				len++;
 				continue;
 			}
-			
 			for (int i = 0; i < cur.length(); i++) {
 				char[] tmp = cur.toCharArray();
 				for (char c = 'a'; c <= 'z'; c++) {					
