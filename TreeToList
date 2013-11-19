@@ -7,7 +7,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-    
+    //in place convert to link list structure
     public void flatten(TreeNode root) {
         // Note: The Solution object is instantiated only once and is reused by each test case.
         Stack<TreeNode> s = new Stack<TreeNode>();
