@@ -10,11 +10,26 @@ public class ClassicSingleton {
 	}
 }
 
+
+//Early instantiation using implementation with static field.
+class Singleton{
+	private static Singleton instance = new Singleton();
+	private Singleton(){
+	}
+	public static Singleton getInstance(){    
+		return instance;
+	}
+	public void doSomething(){
+	}
+}
+
 class SingletonThreadsafe {
 	private static SingletonThreadsafe instance;
 
 	private SingletonThreadsafe() {
 	}
+	
+	//only difference
 	public static synchronized SingletonThreadsafe getInstance() {
 		if (instance == null)
 			instance = new SingletonThreadsafe();
@@ -29,6 +44,7 @@ class Singleton {
 	private static Singleton instance;
 	private Singleton() {
 	}
+	//only difference
 	public static Singleton getInstance() {
 		if (instance == null) {
 			synchronized (Singleton.class) {
@@ -47,15 +63,4 @@ class Singleton {
 }
 
 
-//Early instantiation using implementation with static field.
-class Singleton{
-	private static Singleton instance = new Singleton();
-	private Singleton(){
-	}
-	public static Singleton getInstance(){    
-		return instance;
-	}
-	public void doSomething(){
-	}
-}
 
