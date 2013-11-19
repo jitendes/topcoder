@@ -45,6 +45,7 @@ public class Solution {
 	        }
 	        return diff == 1;
 	    }
+
 //faster way
 	public int ladderLength(String start, String end,
 			HashSet<String> dict) {
