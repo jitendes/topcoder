@@ -10,7 +10,8 @@ public class BlockingQueue<T> {
 		this.queue=new LinkedList<T>();
 		this.capacity = capacity;
 	}
-
+	
+	//Both methods lock the same monitor, so add and remove cannot be executed concurrently
 	public synchronized void add(T item) throws InterruptedException {
 		while (isFull()) {
 			wait();
