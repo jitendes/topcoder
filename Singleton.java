@@ -1,32 +1,31 @@
-public class Singleton {
-	private static Singleton instance = null;
+public class ClassicSingleton {
+	private static ClassicSingleton instance;
 
-	private Singleton() {
+	private ClassicSingleton() {
 		// Exists only to defeat instantiation.
 	}
 
-	public static Singleton getInstance() {
-		if (instance == null) {
-			instance = new Singleton();
-		}
+	public static ClassicSingleton getInstance() {
+		if (instance == null)
+			instance = new ClassicSingleton();
 		return instance;
 	}
 }
 
-public class Singleton{
-	private static Singleton instance;
-	private Singleton(){
-		...
+class SingletonThreadsafe {
+	private static SingletonThreadsafe instance;
+
+	private SingletonThreadsafe() {
+		// ...
 	}
 
-	public static synchronized Singleton getInstance(){
+	public static synchronized SingletonThreadsafe getInstance() {
 		if (instance == null)
-			instance = new Singleton();
-
+			instance = new SingletonThreadsafe();
 		return instance;
 	}
-	...
-	public void doSomething(){
-		...	
+
+	public void doSomething() {
+		// ...
 	}
 }
