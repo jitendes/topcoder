@@ -1,6 +1,6 @@
-// integer to roman
 import java.util.*;
 public class Solution {
+// integer to roman
     TreeMap<Integer, String> map = new TreeMap<Integer, String>();
     public void setup() {
         map.put(1, "I");
@@ -27,5 +27,28 @@ public class Solution {
             }
         }
         return ret.toString();
+    }
+    
+//Roman to integer
+    Map<Character, Integer> romans = new HashMap<Character, Integer>();
+    public int romanToInt(String s) {
+        romans.put('I', 1);
+        romans.put('V', 5);
+        romans.put('X', 10);
+        romans.put('L', 50);
+        romans.put('C', 100);
+        romans.put('D', 500);
+        romans.put('M', 1000);
+        char[] cs = s.toCharArray();
+        int num = 0;
+        for (int i = 0; i < cs.length; i++) {
+            int tmp = romans.get(cs[i]);
+            if (i == cs.length - 1 || romans.get(cs[i + 1]) <= tmp) {
+                num += tmp;
+            } else {
+                num -= tmp;
+            }
+        }
+        return num;
     }
 }
