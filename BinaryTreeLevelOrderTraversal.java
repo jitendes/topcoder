@@ -8,6 +8,32 @@
  * }
  */
 public class Solution {
+//print directly, change line for each level
+    public void levelOrder(TreeNode root) {
+        if (root==null) return;
+        
+        LinkedList<TreeNode> q=new LinkedList<TreeNode>();
+        q.add(root);
+        q.add(null);//mark level
+        
+        while (q.size()!=0){
+            TreeNode cur=q.remove();
+            if (cur!=null){
+                System.out.printf("%d ", cur.val);
+                if (cur.left!=null)
+                    q.add(cur.left);
+                if (cur.right!=null)
+                    q.add(cur.right);
+            }else if (q.size()!=0){
+                //reach the end of a level
+                System.out.printf("\n");
+                q.add(cur);
+                continue;
+            }
+        }
+        System.out.printf("\n");//last level
+    }
+    
 //normal level order, queue
     public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
         if (root==null) return new ArrayList<ArrayList<Integer>>();
