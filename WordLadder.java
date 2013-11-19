@@ -1,4 +1,5 @@
 public class Solution {
+//visited and q
    	 public int ladderLength(String start, String end, HashSet<String> dict) {
 	        // Note: The Solution object is instantiated only once and is reused by each test case.
 	        Set<String> visited = new HashSet<String>();
