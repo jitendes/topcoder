@@ -24,6 +24,7 @@
         }
     }
 
+//bst to double linked list
 class TreeList { 
     /* 
      helper function -- given two list nodes, join them 
