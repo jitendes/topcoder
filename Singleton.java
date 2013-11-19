@@ -13,6 +13,7 @@ public class ClassicSingleton {
 
 //Early instantiation using implementation with static field.
 class Singleton{
+	//get instaiated early
 	private static Singleton instance = new Singleton();
 	private Singleton(){
 	}
