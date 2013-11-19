@@ -13,7 +13,7 @@ public class ClassicSingleton {
 
 //Early instantiation using implementation with static field.
 class Singleton{
-	//get instaiated early
+	//get instantiated early
 	private static Singleton instance = new Singleton();
 	private Singleton(){
 	}
@@ -26,10 +26,8 @@ class Singleton{
 
 class SingletonThreadsafe {
 	private static SingletonThreadsafe instance;
-
 	private SingletonThreadsafe() {
 	}
-	
 	//only difference
 	public static synchronized SingletonThreadsafe getInstance() {
 		if (instance == null)
