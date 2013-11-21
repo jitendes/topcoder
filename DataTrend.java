@@ -18,6 +18,30 @@ public int maxProfit(int[] prices) {
         return sum;
 }
 
+//only two trans
+public int maxProfit(int[] prices) {
+        if (prices.length==0) return 0;
+        int[] left=new int[prices.length];
+        int[] right=new int[prices.length];
+        left[0]=right[prices.length-1]=0;
+        
+        int sum=0;
+        for (int i=1;i<prices.length;i++){
+            sum=prices[i]-prices[i-1]+Math.max(sum,0); //accumulated profit, if <0, start again
+            left[i]=Math.max(left[i-1], sum); //max profit before i
+        }
+        sum=0;
+        for (int i=prices.length-2;i>=0;i--){
+            sum=prices[i+1]-prices[i]+Math.max(sum,0);
+            right[i]=Math.max(right[i+1], sum); //max profit after i
+        }
+        int max=0;
+        for (int i=0;i<prices.length;i++){
+            max=Math.max(max, left[i]+right[i]);
+        }
+        return max;
+}
+
 //max continous subarray sum
 public int maxSubArray(int[] A){
         int local=0;
