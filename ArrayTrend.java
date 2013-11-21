@@ -10,13 +10,13 @@ public int maxProfit(int[] prices) {
 }
 
 //beating the stck market, many trans
-    public int maxProfit(int[] prices) {
+public int maxProfit(int[] prices) {
         int sum=0;
         for (int i=1; i<prices.length; i++){
             sum+=prices[i]>prices[i-1]?prices[i]-prices[i-1]:0; //find all monotone increasing range
         }
         return sum;
-    }
+}
 
 //max continous subarray sum
 public int maxSubArray(int[] A){
